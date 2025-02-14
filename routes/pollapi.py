@@ -32,7 +32,9 @@ async def poll(model: PollModel, userInfo: dict[str, str] = Depends(user)):
     if row:
         return ORJSONResponse(
             status_code=400,
-            detail="1ユーザーが投票できる回数は一回までです。次回以降の投票をお待ちしております。",
+            content={
+                "detail": "1ユーザーが投票できる回数は一回までです。次回以降の投票をお待ちしております。"
+            },
         )
     if model.to == userInfo["id"]:
         return ORJSONResponse(
