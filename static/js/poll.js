@@ -31,6 +31,11 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+    if (document.getElementById("reasonTextArea").value.length < 5) {
+      alert("好きな理由は最低でも5文字は書いてください");
+      return;
+    }
+
     document.getElementById("submitButton").classList.add("is-loading");
 
     const userName = document.getElementById("userNameInput").value;
