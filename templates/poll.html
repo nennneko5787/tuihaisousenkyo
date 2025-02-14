@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ツイ廃総選挙</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css"
+    />
+    <style>
+      #field {
+        padding-top: 10px;
+      }
+    </style>
+
+    <script src="/static/js/poll.js"></script>
+  </head>
+  <body>
+    <div class="modal" id="modal">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">最終確認</p>
+          <button class="delete" aria-label="close"></button>
+        </header>
+        <section class="modal-card-body">
+          <figure class="image is-128x128">
+            <img class="is-rounded" src="" id="warningIcon" />
+          </figure>
+          <span id="warningMessage">{}さんに投票しますか？</span>
+        </section>
+        <footer class="modal-card-foot">
+          <div class="buttons">
+            <button id="vote" aria-x-id="" class="button is-success">
+              投票する
+            </button>
+            <button class="button" aria-label="close">やっぱりやめる</button>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <h1 class="title">ツイ廃総選挙</h1>
+        <p class="subtitle">
+          あなたが一番<strong>好きなツイ廃</strong>を選べ！！
+        </p>
+      </div>
+
+      <div class="container" id="field">
+        <span id="loadingText">読み込み中です</span>
+        <div class="inputField" style="display: none">
+          <form id="form">
+            <label for="userNameInput">あなたが一番好きなツイ廃のID</label>
+            <p class="control has-icons-left">
+              <input
+                type="text"
+                class="input"
+                id="userNameInput"
+                placeholder="@抜きのユーザーIDをここに入力"
+                pattern="^[A-Za-z0-9_]{1,15}$"
+                required
+              />
+              <span class="icon is-small is-left">@</span>
+            </p>
+            <label for="reasonTextArea">好きな理由</label>
+            <textarea
+              id="reasonTextArea"
+              class="textarea"
+              placeholder="好きな理由を語ってみましょう！省略はできません"
+              required
+            ></textarea>
+            <button
+              class="button is-fullwidth"
+              type="submit"
+              id="submitButton"
+              style="margin-top: 10px"
+            >
+              次へ
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
