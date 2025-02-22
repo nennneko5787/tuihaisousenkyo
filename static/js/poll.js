@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (getCookie("token") === null) {
     loadingText.innerHTML =
-      "<a href='/login'><img src='/static/img/sign-in-with-x.svg' width='50%' alt='Xでサインイン' style='background-color: #000; padding: 10px; padding-left: 20px; padding-right: 20px; border-radius: 10px;'></img></a>";
+      "<a href='/login'><img src='/static/img/sign-in-with-x.svg' width='50%' alt='Xでサインイン' style='background-color: #000; padding: 10px; padding-left: 20px; padding-right: 20px; border-radius: 10px;'></img></a><br>↑このボタンを押してXのアカウントでログインしてください。";
     return;
   }
 
